@@ -1,0 +1,39 @@
+div {
+    width: 20%;
+    margin: 30vh auto;
+}
+* {
+    background-color: #202124;
+    color: #bdc1c6;
+    font-family: arial,sans-serif;
+
+}
+#dzisiaj {
+    margin: 0 44vw;
+    background-color: #0d0c0d;
+    box-shadow: 0px 0px 5px 5px #0d0c0d;
+    border-radius: 15%;
+    
+}
+button {
+    width: 90px;
+    height: 30px;
+    background-color: #0d0c0d;
+    box-shadow: 2px 2px 0px 0px #bdc1c6;
+    border-radius: 5px;
+}
+button:hover {
+    color: white;
+    box-shadow: white;
+}
+input {
+    height: 26px;
+    width: 100px;
+    border-color: #0d0c0d;
+    background-color: #0d0c0d;
+    box-shadow: 2px 2px 0px 0px #bdc1c6;
+    border-radius: 5px;
+}
+h2 {
+    text-shadow: 3px 3px 3px black;
+}

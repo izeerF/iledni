@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <link rel="stylesheet" href="main.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h2 id="dzisiaj"></h2>
+    <div>
+    <input id="dateInput" type="date">
+    <button id="button">zatwierdz</button>
+    <h2 id="wynik"></h2>
+    <h2 id="wynik2"></h2>
+    <h2 id="dzien"></h2>
+</div>
+    <script>
+        var dateInput = document.getElementById('dateInput');
+        var button = document.getElementById('button');
+        var wynik = document.getElementById('wynik');
+        var wynik2 = document.getElementById('wynik2');
+        var dzisiaj = document.getElementById('dzisiaj');
+        var dzien = document.getElementById('dzien');
+        button.addEventListener("click", getDate);
+
+        function getDate() {
+            const weekday = ["Niedziela", "Poniedzialek", "Wtorek", "Sroda", "Czwartek", "Piatek", "Sobota"];
+            
+            var today = new Date();
+            var date = new Date(dateInput.value);
+            let day = weekday[date.getDay()];
+            date.setHours(0);
+            date.setMinutes(0);
+            var diffTime = Math.abs(date - today);
+            var diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+            var diffHours = Math.ceil(diffTime / (1000 * 60 * 60));
+            var diffDays = diffDays - 1;
+            console.log(diffDays);
+            console.log(diffHours);
+            wynik.innerHTML = 'Pomiedzy ta data a dzisiaj jest roznica ' + diffDays + ' dni';
+            wynik2.innerHTML = 'Pomiedzy ta data a dzisiaj jest roznica ' + diffHours + ' godzin';
+            dzien.innerHTML = 'Ten dzien wypada w: ' + day
+        }
+        function odliczanie() {
+            var today = new Date();
+            dzisiaj.innerHTML = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate() + " " + today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+        }
+        setInterval(odliczanie, 500);
+    </script>
+</body>
+</html>
